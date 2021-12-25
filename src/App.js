@@ -5,6 +5,7 @@ import NavBar from './Component/Navbar';
 import Add from './Component/Add';
 import { useState } from "react"
 import Rating from "./Component/Rating";
+import Menu from './Component/Menu';
 
 
 var moviedat = [
@@ -177,13 +178,20 @@ function App() {
   console.log(rating)
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Menu/>
+      
+      <div className='bloc1'>
+      <h1>Show Movies</h1>
       
       <Add moviedata={moviedata}    setMoviedata={setMoviedata}  />
+      </div>
+      <div className='bloc2'>
       <NavBar search={search} setSearch={setSearch} />
       <Rating rating={rating} setRating={setRating}/>
+      </div>
       
       <MoviesList moviedata={moviedata} setMoviedata={setMoviedata} search={search} rating={rating}/>
+    
 
     </div>
   );

@@ -14,6 +14,7 @@ function Add({moviedata, setMoviedata}){
     const [rating,setRating]=useState('')
 
      const Ajouter=()=>{setMoviedata([...moviedata, {
+       id:Math.random,
       title :title ,
       description : discription,
       posterUrl : path,
@@ -23,8 +24,8 @@ function Add({moviedata, setMoviedata}){
      }])}
     return(
         <div>
-     <Button variant="primary" onClick={handleShow}>
-        Add
+     <Button variant="dark" onClick={handleShow}>
+        Add New Film
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -39,7 +40,8 @@ function Add({moviedata, setMoviedata}){
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Discription</Form.Label>
-            <Form.Control type="text" placeholder="Enter Discription" onChange={(e)=> setDiscritipionn(e.target.value)} value={discription} />
+           
+            <Form.Control as="textarea" rows={3} placeholder="Enter Discription" onChange={(e)=> setDiscritipionn(e.target.value)} value={discription}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Photo</Form.Label>
@@ -56,9 +58,10 @@ function Add({moviedata, setMoviedata}){
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=> {  Ajouter();  handleClose() }}>
+          <Button  variant="success" onClick={()=> {  Ajouter();  handleClose() }}>
             Add
           </Button>
+          
         </Modal.Footer>
       </Modal>
         </div>
