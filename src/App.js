@@ -162,7 +162,7 @@ var moviedat = [
     title: "SHERLOCK",
     posterUrl:
       "https://images-na.ssl-images-amazon.com/images/I/51j90UOkX-L.jpg",
-    rate: 5,
+    rate: 4,
     description:
       "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
     trailer: "https://www.youtube.com/embed/IrBKwzL3K7s",

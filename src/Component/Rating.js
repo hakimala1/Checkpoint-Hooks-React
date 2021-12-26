@@ -11,7 +11,7 @@ import React from "react";
         <ReactStars
           count={5}
           onChange={ratingChanged}
-         value = {rating}
+          value = {rating}
           size={24}
           activeColor="#ffd700"
         
