@@ -1,7 +1,6 @@
 import {Modal,Button,Form} from "react-bootstrap"
 import React, { useState } from 'react';
-
-
+import Rating from "./Rating";
 function Edit({moviedata, setMoviedata,t,des,url,r,id}){
     const [show, setShow] = useState(false);
 console.log(moviedata)
@@ -52,7 +51,7 @@ console.log(moviedata)
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Rating</Form.Label>
-            {/* <Rate rating={r} setRating={setRating}/> */}
+            <Rating rating={rating} setRating={setRating}/>
             {/* <Rate rate={r}  /> */}
             {/* <Rating setRating={setRating} value={r}  ></Rating> */}
             {/* <ReactStars
@@ -63,7 +62,7 @@ console.log(moviedata)
         
           value={rating}
         /> */}
-        <input  value={rating}  onChange={(e)=>setRating(e.target.value)} ></input>
+        {/* <input  value={rating}  onChange={(e)=>setRating(e.target.value)} ></input> */}
             </Form.Group>
         </Form>
         
@@ -72,7 +71,7 @@ console.log(moviedata)
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button  variant="success" onClick={()=> {  edit(id, {title,description:discription,rate:rating});  handleClose() }}>
+          <Button  variant="success" onClick={()=> {  edit(id, {title,posterUrl:path,rate:rating,description:discription});  handleClose() }}>
             Edit
           </Button>
           

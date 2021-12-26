@@ -1,16 +1,16 @@
 import ReactStars from "react-rating-stars-component";
 import React from "react";
 
- function Rate({rate}){
-    // const ratingChanged = (rat) => {
-    //     setRate(rat)
-    //     console.log(rat)
-    //   };
+ function Rate({rate,setRate}){
+    const ratingChanged = (rate) => {
+        setRate(rate)
+        console.log(rate)
+      };
        
       return(
         <ReactStars
           count={5}
-          value={rate}
+          onChange={ratingChanged}
           size={24}
           activeColor="#ffd700"
           disabled ={true}

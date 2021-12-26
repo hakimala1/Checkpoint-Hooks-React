@@ -3,9 +3,18 @@ import '../App.css';
 import Edit from './Edit';
 import ReactStars from "react-rating-stars-component";
 
+
+
+
+
 function MovieCard({el:{title,posterUrl,description,trailer,rate,id},  setMoviedata, moviedata}){
   console.log(rate)
+
   // const [rat,setRate]=useState()  
+  // useEffect(() => {
+  //   // Met à jour le titre du document via l’API du navigateur
+  //  setRating(rate)
+  // },[]);
   return( 
         <>
 <Card style={{ width: '18rem' }} className='bg-dark text-white'>
@@ -33,6 +42,7 @@ function MovieCard({el:{title,posterUrl,description,trailer,rate,id},  setMovied
         
           
         />
+        {/* <Rating rating={rating} setRating={setRating}/> */}
 
   </ListGroup>
     </Card.Footer>
