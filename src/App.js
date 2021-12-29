@@ -6,6 +6,10 @@ import Add from './Component/Add';
 import { useState } from "react"
 import Rating from "./Component/Rating";
 import Menu from './Component/Menu';
+import { Route } from 'react-router-dom';
+import Details from './Component/Details';
+import Contact from './Component/Contact';
+import Footer from './Component/Footer';
 
 
 var moviedat = [
@@ -175,12 +179,14 @@ function App() {
   // const [text,setText]=useState('')
   // const search =()=>{moviedata.filter(el=>el.title===text)}
   const [search,setSearch]=useState('')
-  console.log(rating)
+  // console.log(rating)
   return (
-    <div className="App">
+    <div className="App bg">
       <Menu/>
+      <Route exact path={'/'} render={()=>
       
-      <div className='bloc1'>
+      <>
+            <div className='bloc1'>
       <h1>Show Movies</h1>
       
       <Add moviedata={moviedata}    setMoviedata={setMoviedata}  />
@@ -191,8 +197,27 @@ function App() {
       </div>
       
       <MoviesList moviedata={moviedata} setMoviedata={setMoviedata} search={search} rating={rating}/>
-    
-
+      </>
+      }></Route>
+    <Route exact path={'/Home'} render={()=>
+      
+      <>
+            <div className='bloc1'>
+      <h1>Show Movies</h1>
+      
+      <Add moviedata={moviedata}    setMoviedata={setMoviedata}  />
+      </div>
+      <div className='bloc2'>
+      <NavBar search={search} setSearch={setSearch} />
+      <Rating rating={rating} setRating={setRating}/>
+      </div>
+      
+      <MoviesList moviedata={moviedata} setMoviedata={setMoviedata} search={search} rating={rating}/>
+      </>
+      }></Route>
+    <Route path={'/Details/:id'} render={(props)=><Details moviedata={moviedata} {...props}></Details>}></Route>
+      <Route path={'/Contact'} component={Contact}></Route>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

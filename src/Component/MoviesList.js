@@ -9,9 +9,9 @@ function MoviesList({moviedata, search, rating, setMoviedata}){
             {(moviedata.filter(el=>el.title.toUpperCase().includes(search.toUpperCase()) &&(el.rate>rating) ).length<=0) &&   
             <img
             className="Not"
-     src="https://zum-talent.ecore.com.sg/assets/frontend/image/no_result.jpeg"
-      alt="First slide"
-    />}
+                 src="https://zum-talent.ecore.com.sg/assets/frontend/image/no_result.jpeg"
+                     alt="First slide"
+                    />}
         </div>
 
 

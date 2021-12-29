@@ -1,14 +1,15 @@
-import {Card, ListGroup, } from 'react-bootstrap';
+import {Button, Card, ListGroup, } from 'react-bootstrap';
 import '../App.css';
 import Edit from './Edit';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 
 
 
 
 function MovieCard({el:{title,posterUrl,description,trailer,rate,id},  setMoviedata, moviedata}){
-  console.log(rate)
+  // console.log(rate)
 
   // const [rat,setRate]=useState()  
   // useEffect(() => {
@@ -49,12 +50,17 @@ function MovieCard({el:{title,posterUrl,description,trailer,rate,id},  setMovied
  
  
   <Card.Footer>
+    <div className='D'>
     <Card.Link href={trailer}>Film Link</Card.Link>
+    {/* <Button variant="info">Details</Button> */}
+    <Link to={`/Details/${id}`}><Button variant="info">Details</Button></Link>
+    </div>
     </Card.Footer>
  <Edit t={title} des={description} url={posterUrl} r={rate}  id={id}   moviedata={moviedata} setMoviedata={setMoviedata} ></Edit>
   
 
 </Card>
+
 {/* <Card>
     <Card.Img variant="top" src={posterUrl} />
     <Card.Body>

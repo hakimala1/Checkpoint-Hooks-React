@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Rating from "./Rating";
 function Edit({moviedata, setMoviedata,t,des,url,r,id}){
     const [show, setShow] = useState(false);
-console.log(moviedata)
+// console.log(moviedata)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     

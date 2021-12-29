@@ -8,6 +8,7 @@ import React from "react";
       };
        
       return(
+        <div className="bgr">
         <ReactStars
           count={5}
           onChange={ratingChanged}
@@ -17,6 +18,7 @@ import React from "react";
         
           
         />
+        </div>
        
       
       )  
